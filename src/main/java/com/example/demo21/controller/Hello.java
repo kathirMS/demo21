@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Hello {
     @GetMapping(value = "/hello")
     public String getString(){
-        return "Hello World";
+        return "Hello World added docker file";
     }
 }
