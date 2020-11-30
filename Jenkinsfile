@@ -1,23 +1,10 @@
-
 pipeline {
     agent any
-
     stages {
-        stage ('Maven') {
-
+        stage('Build') {
             steps {
-                withMaven(maven : 'Apache Maven 3.6.3') {
-                    sh 'install'
-                }
+               sh 'mvn install'
             }
         }
-        stage ('Docker build') {
-
-                    steps {
-                        withMaven() {
-                            sh 'docker build -t kathir .'
-                        }
-                    }
-        }
-   }
+    }
 }
