@@ -6,12 +6,18 @@ pipeline {
                sh 'mvn install'
             }
         }
-        stage('docker build'){
+        stage('Docker build'){
           steps{
                sh 'docker build -t kathir:22 .'
           }
 
         }
+        stage('Docker Run'){
+                  steps{
+                       sh 'docker run -p 8081:8080 kathir:22'
+                  }
+
+                }
 
     }
 }
