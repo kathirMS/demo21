@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Docker Run'){
                   steps{
-                       sh 'docker run -p 8081:8080 kathir:22'
+                       sh 'docker run -d -p 8081:8080 kathir:22'
                   }
 
                 }
