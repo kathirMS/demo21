@@ -1,10 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Maven Build') {
             steps {
                sh 'mvn install'
             }
         }
+        stage('docker build'){
+          stage{
+               sh 'docker build -t kathir:22 .'
+          }
+
+        }
+
     }
 }
