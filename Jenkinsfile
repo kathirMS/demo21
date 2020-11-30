@@ -7,7 +7,7 @@ pipeline {
             }
         }
         stage('docker build'){
-          stage{
+          steps{
                sh 'docker build -t kathir:22 .'
           }
 
